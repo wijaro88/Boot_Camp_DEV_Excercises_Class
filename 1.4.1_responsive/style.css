@@ -1,0 +1,56 @@
+.margenDiv{
+    border: 5px green solid;
+}
+.divAltura{
+    height: 50px;
+}
+.divPixeles{
+    width: 100px;
+}
+.divAncho{
+    width: 50%;
+}
+@media screen and (max-width: 2000px){
+    .divAncho{
+        width: 40%
+    }
+    .divInline{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 512px){
+    .divAncho{
+        width: 80%
+    }
+    .divInline{
+        display: block;
+    }
+}
+.divInLine{
+    display: inline;
+}
+
+
+.divPorcentaje{
+    width: 100%;
+}
+html{
+    font-size: 16px;
+}
+
+.tamanio-em{
+    font-size: 24px;
+}
+.hijoEM{
+    font-size: 0.5em;
+}
+.hijoREM{
+    font-size: 0.5rem;
+}
+.divMarginEM{
+margin-top: 1em;
+}
+.divVW{
+    width: 40vw;
+}
