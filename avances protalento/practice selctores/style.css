@@ -1,0 +1,35 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+#titulo {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.lista {
+    list-style: none;
+    font: size 18px;
+    padding: size 10px;
+    border-bottom: 1px;
+    color: lightgray;
+    list-style-image: url("vinetaX.jpg");
+}
+
+.elemento:hover {
+    background-color: lightyellow;
+}
+
+.elemento:focus {
+    background-color: lightcyan;
+    list-style-image: url('vinetaok.jpg');
+}
+
+.elemento:active:valid {
+    list-style-image: url('vinetaok.jpg');
+    color: gray;
+    font-weight: inherit;
+}

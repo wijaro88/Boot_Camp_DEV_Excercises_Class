@@ -1,0 +1,42 @@
+.azul {
+    background: cadetblue;
+}
+
+.container {
+
+    position: static;
+    width: auto
+}
+
+.chico {
+    display: block;
+    width: auto;
+    height: 120px;
+    margin-top: 5px;
+}
+
+.grande {
+    display: block;
+    width: auto;
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .mediano {
+        display: block;
+        width: 49.6%;
+        height: 150px;
+        /* border: white 5px solid; */
+        margin-bottom: 5px;
+    }
+
+    .margin-derecho {
+        position: relative;
+        float: right;
+
+    }
+
+    .margin-abajo {
+        float: inline-end;
+    }
