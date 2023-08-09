@@ -10,7 +10,7 @@ const pool = new Pool({
 
 });
 
-pool.query(`insert into cliente (id_cliente, nombre, apellido, email, telefono, direccion, codigo_postal, barrio) values (16, 'Cob', 'Kuhnwald', 'ckuhnwald0@shareasale.com', 7, null, 1, 'guadaajara');`,(error,results)=> {
+pool.query(`SELECT * FROM venta`,(error,results)=> {
     if(error){
         console.log('Ocurrio un error');
         console.log(error);
@@ -18,4 +18,17 @@ pool.query(`insert into cliente (id_cliente, nombre, apellido, email, telefono, 
     }
     console.log(results.rows);
 
+});
+
+const id = 5;
+const nombre = 'Pedro';
+const primer_apellido = 'Pascal';
+
+pool.query('INSERT INTO cliente VALUES($1, $2, $3)', [id, nombre, primer_apellido], (error, results) => {
+    if(error){
+        console.log('Ocurrió un error');
+        console.log(error);
+        return;
+    }
+    console.log(results.rows);
 });
