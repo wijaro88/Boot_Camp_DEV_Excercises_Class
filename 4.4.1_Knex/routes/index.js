@@ -1,8 +1,7 @@
-const express = require('express');
-const router = express.Router;
+const ClienteRoutes = require('./ClienteRoutes');
 
-router.get('/', (req, res)=>{
 
-    res.json(null);
-});
-module.exports = router;
+module.exports = {
+    ClienteRoutes,
+    // 
+};
