@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { ClientController } = require('../controllers');
 
 //crear
-router.post('/', (req,res)=> res.send({message: "se creo"}));
+router.post('/', ClientController.createClient);
 //leer
 router.get('/', (req,res)=>res.send({message: "se leen todos"}));
 router.get('/:id', (req,res)=>res.send({message: "se lee uno"}));
