@@ -5,12 +5,12 @@ const Routes = require ('./routes');
 
 
 
-server.use('/clients',Routes.ClienteRoutes);
-server.use('/products',Routes.ProductRoutes);
-server.use('/sales',Routes.SalesRoutes);
 
 
+server.use(express.json());
+server.use('/api/v1', Routes);
 
+// host => localhost:3000/api/
 
 
 server.listen(port, () => {

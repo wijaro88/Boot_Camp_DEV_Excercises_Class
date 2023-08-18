@@ -6,10 +6,14 @@ exports.up = function(knex) {
     return knex.schema.hasTable('cliente').then((exists) => {
         if (!exists) {
             return knex.schema.createTable("cliente", function (table) {
-              table.increments("id_cliente").primary();
+              table.integer("id_cliente").primary();
               table.string("nombre").notNullable();
               table.string("apellidos").notNullable();
-              table.boolean("active").notNullable().defaultTo(true);
+              table.string("email").notNullable();
+              table.integer("telefono").notNullable();
+              table.string("direccion").notNullable();
+              table.integer("codigo_postal").notNullable();
+              table.string("barrio").notNullable();
               table.timestamp("created_at").defaultTo(knex.fn.now());
             });
           }
