@@ -1,4 +1,4 @@
-const ClientController=require('./ClientControllers')
+const ClientController=require('./ClientControllers');
 
 module.exports = {
     ClientController,
