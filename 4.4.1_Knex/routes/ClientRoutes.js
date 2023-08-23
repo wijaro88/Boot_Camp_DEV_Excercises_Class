@@ -5,8 +5,8 @@ const { ClientController } = require('../controllers');
 //crear
 router.post('/', ClientController.createClient);
 //leer
-router.get('/', (req,res)=>res.send({message: "se leen todos"}));
-router.get('/:id', (req,res)=>res.send({message: "se lee uno"}));
+router.get('/:id', ClientController.getClient);
+router.get('/', ClientController.getAllClients);
 
 //actualizar
 router.put('/:id', (req,res)=>res.send({message: "se sustituyo"}));
