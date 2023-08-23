@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //crear
-router.post('/', (req, res) => res.send({ message: "se creo" }));
+router.post('/',);
 //leer
 router.get('/', (req, res) => res.send({ message: "se leen todos" }));
 router.get('/:id', (req, res) => res.send({ message: "se lee uno" }));

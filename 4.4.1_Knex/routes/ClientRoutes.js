@@ -9,11 +9,11 @@ router.get('/:id', ClientController.getClient);
 router.get('/', ClientController.getAllClients);
 
 //actualizar
-router.put('/:id', (req,res)=>res.send({message: "se sustituyo"}));
+router.put('/:id', (req, res) => res.send({ message: "se sustituyo" }));
 
-router.patch('/:id', (req,res)=>res.send({message: "se modifico una o mas propiedades"}));
+router.patch('/:id', (req, res) => res.send({ message: "se modifico una o mas propiedades" }));
 //
-router.delete('/:id', (req,res)=>res.send({message: "se borró"}));
+router.delete('/:id', (req, res) => res.send({ message: "se borró" }));
 
 
 

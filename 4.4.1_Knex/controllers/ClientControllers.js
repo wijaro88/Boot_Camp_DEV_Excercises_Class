@@ -21,8 +21,8 @@ const getClient = (req, res) => {
 
 const getAllClients = (req, res) => {
     ClientModel.getAllClients()
-        .then((respuesta) => {
-            return res.status(200).send({ message: respuesta })
+        .then((data) => {
+            return res.status(200).send({ message: data })
         })
         .catch((error) => {
             return res.status(500).send({ message: error })
