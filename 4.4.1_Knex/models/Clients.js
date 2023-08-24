@@ -6,10 +6,10 @@ const createClient = (client) => {
     return database('cliente')
         .insert(client);
 };
-const getClient = (client) => {
+const getClient = (id) => {
     // console.log('client',client);
     // return database('cliente')
-    return database.select('*').from('cliente').where({ id_cliente: client });
+    return database.select('*').from('cliente').where('id_cliente', id );
 
 };
 const getAllClients = (client) => {

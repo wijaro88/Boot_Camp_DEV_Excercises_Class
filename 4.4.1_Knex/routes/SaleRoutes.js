@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+const { SaleController} = require('../controllers');
+
 //crear
-router.post('/',);
+router.post('/', SaleController.createSale);
 //leer
 router.get('/', (req, res) => res.send({ message: "se leen todos" }));
 router.get('/:id', (req, res) => res.send({ message: "se lee uno" }));
