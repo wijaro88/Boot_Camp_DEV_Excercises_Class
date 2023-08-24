@@ -1,0 +1,19 @@
+{
+    "id_cliente":200,
+    "productos":[
+        {
+            "sku":1,
+            "cantidad":3
+        },
+        {
+            "sku":2,
+            "cantidad":2
+        },
+        {
+            "sku":3,
+            "cantidad":1
+        }
+
+    ]
+
+}
