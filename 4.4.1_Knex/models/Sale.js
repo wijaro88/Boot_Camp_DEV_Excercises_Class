@@ -4,7 +4,7 @@ const database = require('knex')(connection);
 
 const createSale = (sale) => {
     return database('venta')
-        .insert(sale);
+        .insert(sale).returning('id');
 };
 
 

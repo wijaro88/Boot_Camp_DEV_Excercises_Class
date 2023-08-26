@@ -8,7 +8,8 @@
     "knex": "knex init",
     "knex_migrations": "knex migrate:make cliente && knex migrate:make producto && knex migrate:make venta && knex migrate:make venta_producto",
     "knex_latest": "knex migrate:latest",
-    "knex_migration_update_client": "knex migrate:make cliente"
+    "knex_migration_update_client": "knex migrate:make cliente",
+    "knex_migration_update_venta_producto": "knex migrate:make ventaproducto"
   },
   "keywords": [],
   "author": "",
