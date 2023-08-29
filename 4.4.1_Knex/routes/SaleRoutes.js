@@ -7,7 +7,7 @@ const { SaleController} = require('../controllers');
 router.post('/', SaleController.createSale);
 //leer
 router.get('/', (req, res) => res.send({ message: "se leen todos" }));
-router.get('/:id', (req, res) => res.send({ message: "se lee uno" }));
+router.get('/:id', SaleController.getDetailedSale);
 
 //actualizar
 router.put('/:id', (req, res) => res.send({ message: "se sustituyo" }));

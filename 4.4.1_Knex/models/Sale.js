@@ -7,8 +7,15 @@ const createSale = (sale) => {
         .insert(sale).returning('id');
 };
 
-
+const getDetailedSaleById = (id) => {
+    return database.select('*').from('venta')
+    .join('venta_producto', 'venta_producto.id_venta', 'venta.id')
+    .join('producto', 'producto.sku', 'venta_producto.sku_producto')
+    .join('cliente', 'cliente.dni', 'venta.dni_cliente')
+    .where('id', id);
+}
 
 module.exports={
-    createSale
+    createSale,
+    getDetailedSaleById
 }

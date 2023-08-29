@@ -6,7 +6,7 @@ exports.up = function(knex) {
     return knex.schema.hasTable('cliente').then((exists) => {
         if (!exists) {
             return knex.schema.createTable("cliente", function (table) {
-              table.integer("id_cliente").primary();
+              table.increments("dni").primary();
               table.string("nombre").notNullable();
               table.string("apellidos").notNullable();
               table.string("email").notNullable();
@@ -14,10 +14,12 @@ exports.up = function(knex) {
               table.string("direccion").notNullable();
               table.integer("codigo_postal").notNullable();
               table.string("barrio").notNullable();
+              table.boolean("active").notNullable().defaultTo(true);
               table.timestamp("created_at").defaultTo(knex.fn.now());
             });
           }
     });
+
 };
 
 /**

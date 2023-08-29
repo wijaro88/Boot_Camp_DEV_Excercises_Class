@@ -8,9 +8,9 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      host:'127.0.0.1',
-      database: 'ABARROTES',
-      user:     'postgres',
+      host: '127.0.0.1',
+      database: 'sales',
+      user: 'postgres',
       password: 'root'
     },
     pool: {
@@ -21,7 +21,6 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
-
   staging: {
     client: 'postgresql',
     connection: {

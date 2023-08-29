@@ -7,14 +7,15 @@ exports.up = function(knex) {
         if (!exists) {
             return knex.schema.createTable("venta", function (table) {
               table.increments("id").primary();
-              table.integer("id_venta").notNullable();
-              table.foreign("id_cliente").references("cliente.dni")
+              table.integer("dni_cliente").notNullable();
+              table.foreign("dni_cliente").references("cliente.dni");
               
             });
           }
     });
-}; 
 
+ 
+};
 
 /**
  * @param { import("knex").Knex } knex

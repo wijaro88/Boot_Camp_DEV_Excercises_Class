@@ -6,7 +6,7 @@ const createSaleProduct = (saleProduct) => {
 }
 
 const createSaleProductBatch = (saleProductRows) => {
-    return database('venta_producto').batchInsert('venta_producto', saleProductRows);
+    return database('venta_producto').insert(saleProductRows);
 }
 
 module.exports = {

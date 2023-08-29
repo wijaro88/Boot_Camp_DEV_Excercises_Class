@@ -4,7 +4,7 @@ const router = express.Router();
 
 const ClientRoutes = require('./ClientRoutes');
 const ProductRoutes = require('./ProductRoutes');
-const SalesRoutes = require('./SalesRoutes');
+const SalesRoutes = require('./SaleRoutes');
 
 
 router.use('/clients', ClientRoutes);
