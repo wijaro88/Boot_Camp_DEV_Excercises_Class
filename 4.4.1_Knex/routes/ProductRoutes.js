@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { ProductController } = require('../controllers');
 
 //crear
-router.post('/', (req, res) => res.send({ message: "se creo" }));
-//leer
+router.post('/', ProductController.createProduct);//leer
 router.get('/', (req, res) => res.send({ message: "se leen todos" }));
 router.get('/:id', (req, res) => res.send({ message: "se lee uno" }));
 
