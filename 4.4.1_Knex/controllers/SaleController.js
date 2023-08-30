@@ -28,7 +28,7 @@ const createSale = (req, res) => {
 const getDetailedSale = (req, res) => {
     SaleModel.getDetailedSaleById(req.params.id).
     then(data => {
-        return res.status(233).send({message: data});
+        return res.status(201).send({message: data});
     }).catch(error => {
         return res.status(500).send({message: error});
     })
