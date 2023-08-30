@@ -1,16 +1,16 @@
 {
-    "id_cliente":200,
+    "dniCliente":4,
     "productos":[
         {
-            "sku":1,
+            "idProducto":"3826",
             "cantidad":3
         },
         {
-            "sku":2,
+            "idProducto":"2240",
             "cantidad":2
         },
         {
-            "sku":3,
+            "idProducto":"2839",
             "cantidad":1
         }
 

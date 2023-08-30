@@ -18,17 +18,17 @@ const createSale = (req, res) => {
         return SaleProductModel.createSaleProductBatch(productsList);
     })
     .then(data => {
-        return res.status(201).send({message: "Venta creada"});
+        return res.status(231).send({message: "Venta creada"});
     })
     .catch(error => {
-        return res.status(500).send({message: error});
+        return res.status(531).send({message: error});
     })
 }
 
 const getDetailedSale = (req, res) => {
     SaleModel.getDetailedSaleById(req.params.id).
     then(data => {
-        return res.status(200).send({message: data});
+        return res.status(233).send({message: data});
     }).catch(error => {
         return res.status(500).send({message: error});
     })
