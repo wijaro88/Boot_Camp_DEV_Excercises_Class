@@ -7,7 +7,8 @@ const createProduct = (product) => {
         .insert(product).returning('sku');
 };
 const allProducts = (product) => {
-    return database.select('*').from('producto')
+   
+    return database.select('*').from('producto');
 }
 
 
