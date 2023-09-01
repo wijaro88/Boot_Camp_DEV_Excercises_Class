@@ -6,6 +6,4 @@ const TaskController = require('../controllers/TaskController');
 
 router.get('/',TaskController.getAll);
 
-module.exports={
-    router,
-};
+module.exports=router;
