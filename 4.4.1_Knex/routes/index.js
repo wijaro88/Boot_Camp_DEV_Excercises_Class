@@ -8,6 +8,7 @@ const SalesRoutes = require('./SaleRoutes');
 
 
 
+
 router.use('/clients', ClientRoutes);
 router.use('/products', ProductRoutes);
 router.use('/sales', SalesRoutes);

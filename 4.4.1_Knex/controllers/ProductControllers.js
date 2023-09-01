@@ -19,9 +19,18 @@ const allProducts = (req,res) => {
         return res.status(500).send({ message: error })
     });
 };
-
+const getOneProduct = (req , res) => {
+    ProductModel.getOneProduct()
+    .then((res) => {
+        return res.status(203).send({message:res})
+    })
+    .catch((error) =>{
+        return res.status(503).send({message:error})
+    });
+};
 
 module.exports={
     createProduct,
-    allProducts
-}
+    allProducts,
+    getOneProduct
+};

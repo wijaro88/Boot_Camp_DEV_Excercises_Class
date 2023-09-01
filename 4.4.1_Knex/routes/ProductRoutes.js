@@ -6,7 +6,7 @@ const { ProductController } = require('../controllers');
 router.post('/', ProductController.createProduct);
 //leer
 router.get('/', ProductController.allProducts);
-router.get('/:id', (req, res) => res.send({ message: "se lee uno" }));
+router.get('/:sku',ProductController.getOneProduct);
 
 //actualizar
 router.put('/:id', (req, res) => res.send({ message: "se sustituyo" }));

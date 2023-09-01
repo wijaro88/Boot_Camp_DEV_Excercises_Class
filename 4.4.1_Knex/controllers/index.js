@@ -1,6 +1,6 @@
-const ClientController=require('./ClientControllers');
-const SaleController = require('./SaleController')
-const ProductController=require('./ProductControllers')
+const ClientController = require('./ClientControllers');
+const SaleController = require('./SaleController');
+const ProductController = require('./ProductControllers');
 
 module.exports = {
     ClientController,
