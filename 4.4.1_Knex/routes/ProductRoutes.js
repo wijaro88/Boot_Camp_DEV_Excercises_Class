@@ -6,13 +6,13 @@ const { ProductController } = require('../controllers');
 router.post('/', ProductController.createProduct);
 //leer
 router.get('/', ProductController.allProducts);
-router.get('/:sku',ProductController.getOneProduct);
+router.get('/:id',ProductController.getOneProduct);
 
 //actualizar
 router.put('/:id', (req, res) => res.send({ message: "se sustituyo" }));
 
 router.patch('/:id', (req, res) => res.send({ message: "se modifico una o mas propiedades" }));
-//
+// borrar
 router.delete('/:id', (req, res) => res.send({ message: "se borró" }));
 
 
