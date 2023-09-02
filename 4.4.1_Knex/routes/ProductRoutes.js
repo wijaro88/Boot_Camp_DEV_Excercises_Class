@@ -13,7 +13,7 @@ router.put('/:id', (req, res) => res.send({ message: "se sustituyo" }));
 
 router.patch('/:id', (req, res) => res.send({ message: "se modifico una o mas propiedades" }));
 // borrar
-router.delete('/:id', (req, res) => res.send({ message: "se borró" }));
+router.delete('/:id', ProductController.deleteProduct);
 
 
 

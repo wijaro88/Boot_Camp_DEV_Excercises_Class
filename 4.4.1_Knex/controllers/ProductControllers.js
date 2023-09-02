@@ -9,7 +9,6 @@ const createProduct = (req, res) => {
             return res.status(500).send({ message: error })
         });
 };
-
 const allProducts = (req,res) => {
     ProductModel.allProducts()
     .then((data) => {
@@ -28,9 +27,21 @@ const getOneProduct = (req , res) => {
         return res.status(503).send({message:error})
     });
 };
+const deleteProduct = (req , res) =>{
+    ProductModel.deleteProduct(req,res)
+    .then((respuesta) => {
+        return res.status(201).send({ message: respuesta })
+    })
+    .catch((error) => {
+        return res.status(500).send({ message: 'no se pueden eliminar productos que cuentan con ventas registradas' })
+    });
+};
+
+
 
 module.exports={
     createProduct,
     allProducts,
-    getOneProduct
+    getOneProduct,
+    deleteProduct
 };

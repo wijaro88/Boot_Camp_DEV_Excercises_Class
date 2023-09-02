@@ -16,10 +16,16 @@ const getOneProduct = (id) => {
     return database.select('*').from('producto').where('sku', id );
 
 };
-
+const deleteProduct = (product) => {
+    return database('productos')
+    .where({sku:product})
+    .del()
+    
+}
 
 module.exports={
     createProduct,
     allProducts,
     getOneProduct,
+    deleteProduct
 }
