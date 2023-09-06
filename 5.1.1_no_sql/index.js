@@ -8,6 +8,7 @@ const routes = require('./routes');
 
 const URI_MONGO = 'mongodb+srv://wijaro88:wijaro88rootmaster..@cluster0.1iotunr.mongodb.net/myTasks?retryWrites=true&w=majorty';
 
+server.use(express.json());
 server.use('/api/v1', routes);
 
 
