@@ -1,12 +1,12 @@
-const Task = require('../models/Tasks');
+const Task = require('../models/Task');
 
-const findALLTask = async () => {
+const findALLTasks = async () => {
     return await Task.find();
 };
 const createTask = async (task) => {
     return await Task.create(task);
 };
 module.exports = {
-    findALLTask,
+    findALLTasks,
     createTask,
 };

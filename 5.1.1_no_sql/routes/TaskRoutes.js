@@ -2,18 +2,35 @@ const express = require('express');
 
 const router = express.Router();
 
-const TaskController = require('../controllers/TaskController');
+const {
+    getAllTasks,
+    getOneTaskById,
+    searchTasks,
+    addTask,
+    updateTask,
+    deleteTask,
+} = require('../controllers/TaskController');
+
+
 // Obtener todas las tareas
-router.get('/',TaskController.getAllTask);
-// obtener una tarea por id
-router.get('/:id',TaskController.getOneTaskById);
+router.get('/', getAllTasks);
 
-router.get('/search', TaskController.searchTask);
+// Obtener una tarea
+router.get('/:id', getOneTaskById);
+// Buscar tareas
+router.get('/search', searchTasks);
 
-router.post('/', TaskController.addTask);
+//Agregar una tarea  createTask
+router.post('/', addTask);
 
-router.patch('/:id',TaskController.updateTask);
-// eliminar una tarea
-router.delete('/', TaskController.deleteTask);
+// Actualizar todo el objeto put ~~
+// Actualizar una propiedad del objeto
+router.patch('/:id', updateTask);
 
-module.exports=router;
+//Eliminar una tarea
+
+router.delete('/:id', deleteTask);
+
+
+
+module.exports = router;
