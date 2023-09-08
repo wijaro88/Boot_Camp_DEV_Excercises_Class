@@ -1,6 +1,7 @@
 const {
     findALLTasks, 
     createTask,
+    searchTasks,
 } = require('../services/TaskService');
 
 module.exports = {
@@ -24,18 +25,33 @@ module.exports = {
     },
 
     searchTasks: (req, res) => { //aggregate
-        return res.send('searchTasks');
+        const params = {};
+        if(req.query.is_done){
+            params.is_done = req.query.is_done;
+        }
+        if(req.query.end_date){
+            params.end_date = { $gt : req.query.end_date };
+        }
+
+        searchTasks(params)
+        .then((tasks)=> {
+            return res.status(200).send(tasks);
+        })
+        .catch((err) => {
+            console.log('error importante adicionando una task');
+            return res.status(500).send('hubo un error creando task');
+        });
     },
 
     addTask: (req, res) => {
-        const { description, end_date } = req.body;
-        createTask({ description, end_date })
+        const { description, end_date,is_done } = req.body;
+        createTask({ description, end_date,is_done })
             .then((task) => {
                 return res.status(201).send(task);
             })
             .catch((err) => {
-                console.log('error importante adicionando una task');
-                return res.status(500).send('hubo un error creando task');
+                console.log('error importante adicionando una task',err);
+                return res.status(501).send('hubo un error creando task');
             });
 
     },
