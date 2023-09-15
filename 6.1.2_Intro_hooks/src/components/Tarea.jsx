@@ -1,11 +1,11 @@
-const Tarea =  ({titulo, eliminarTarea}) => {
-return (
-    <li>
-        {titulo}
-        <button onClick = {eliminarTarea}> Eliminar tarea</button>
+const Tarea = ({ titulo, eliminarTarea }) => {
+    return (
+        <li>
+            {titulo}
+            <button onClick={eliminarTarea}> Eliminar tarea</button>
 
-    </li>
-)
+        </li>
+    )
 
 }
 export default Tarea;
