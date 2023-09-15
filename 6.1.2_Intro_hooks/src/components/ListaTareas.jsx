@@ -3,19 +3,19 @@ import Tarea from "./Tarea";
 
 const ListaTareas = ({ titulo }) => {
 
-        //usestate es un hock que sirve para crearestado
+    //usestate es un hock que sirve para crearestado
     const [contador, setContador] = useState(0);
     const [nuevaTarea, setNuevatarea] = useState(" ");
-    const [tareas,setTareas]=useState([]);
+    const [tareas, setTareas] = useState([]);
 
     const agregarTarea = () => {
         setContador(contador + 1);
         //... para agregar a un arreglo existente en este caso a tarea le agrega nuevaTarea
-        setTareas([...tareas,nuevaTarea]);
+        setTareas([...tareas, nuevaTarea]);
         // alert(tareas);
     }
     const eliminarTarea = (indexTareaABorrar) => {
-        setTareas(tareas.filter((tareaTexto,index) => index !== indexTareaABorrar));
+        setTareas(tareas.filter((tareaTexto, index) => index !== indexTareaABorrar));
     }
 
     return (
@@ -34,10 +34,10 @@ const ListaTareas = ({ titulo }) => {
                     tareas.map((tareaTexto, index) => {
                         return (
                             <Tarea
-                            key ={index}
-                             titulo={tareaTexto}
-                             eliminarTarea= {() => eliminarTarea(index)}
-                             />
+                                key={index}
+                                titulo={tareaTexto}
+                                eliminarTarea={() => eliminarTarea(index)}
+                            />
                         )
                     })
                 }
