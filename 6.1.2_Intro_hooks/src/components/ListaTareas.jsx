@@ -3,7 +3,7 @@ import Tarea from "./Tarea";
 
 const ListaTareas = ({ titulo }) => {
 
-    //usestate es un hock que sirve para crearestado
+    //usestate es un hock que sirve para crear estado
     const [contador, setContador] = useState(0);
     const [nuevaTarea, setNuevatarea] = useState(" ");
     const [tareas, setTareas] = useState([]);
