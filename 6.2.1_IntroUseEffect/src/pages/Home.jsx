@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const [pokemones, setPokemones] = useState([]);
   const [limite, setLimite] = useState(20);
-  const [filtroNombre] = useState('');
-  const [pokemonSeleccionado, setPokemonSeleccionado] = useState(0);
+  const [filtroNombre, setFiltroNombre] = useState('');
+  // const [pokemonSeleccionado, setPokemonSeleccionado] = useState(0);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/?&limit=${limite}`)
@@ -29,32 +29,39 @@ const Home = () => {
     setFiltroNombre(event.target.value);
   }
 
-  const seleccionarPokemon = (idPokemon) => {
-    setPokemonSeleccionado(idPokemon);
-  }
+  const pokemonesFiltrados = pokemones.filter(pokemon => {
+    return pokemon.name.toLowerCase().includes(filtroNombre.toLocaleLowerCase());
+  });
+  // const seleccionarPokemon = (idPokemon) => {
+  //   setPokemonSeleccionado(idPokemon);
+  // }
 
   return (
-    <>
+    <div className='container'>
 
       <p><Link to={'/about'}>Acerca de </Link></p>
       <p><Link to={'/pokemon/2'}>Detalle Pokémon </Link></p>
 
       <h1>Pokedex</h1>
-      <label>Límite de Pokemones: </label>
-      <input
-        value={limite}
-        onChange={capturarLimite}
-      />
-
-      {/*<label>Búsqueda por nombre: </label>
-        <input 
-          value={filtroNombre}
-          onChange={capturarFiltroNombre}
-        />*/}
-
+      <div className='row-col-10'>
+        <div className='col-5'>
+          <label>Límite de Pokemones: </label>
+          <input
+            value={limite}
+            onChange={capturarLimite}
+          />
+        </div>
+        <div className='col-5'>
+          <label>Búsqueda por nombre: </label>
+          <input
+            value={filtroNombre}
+            onChange={capturarFiltroNombre}
+          />
+        </div>
+      </div>
       <div className='row'>
         {
-          pokemones.map((pokemon, index) => {
+          pokemonesFiltrados.map((pokemon, index) => {
             return (
               <div className='col-6 col-sm-6 col-md-4'>
                 <div className='card ' key={index}>
@@ -64,8 +71,11 @@ const Home = () => {
                   />
                   <div className='card-body'>
                     <Link
-                    className='card-title'
-                    to={`/pokemon/${pokemon.url.split('/')[6]}`}>{pokemon.name}</Link>
+                      to={`/pokemon/${pokemon.url.split('/')[6]}`}
+                      className='card-title'
+                    >
+                      {pokemon.name}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -74,9 +84,8 @@ const Home = () => {
           })
         }
       </div>
-      { /*<DetallePokemon urlPokemon={pokemonSeleccionado}/> */}
-    </>
-
+    </div>
+    // { /*<DetallePokemon urlPokemon={pokemonSeleccionado}/> */}
   )
 }
 
